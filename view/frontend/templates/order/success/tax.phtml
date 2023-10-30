@@ -1,0 +1,78 @@
+<?php
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_OrderSuccessPage
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ * phpcs:ignoreFile
+ */
+
+use Magento\Tax\Block\Sales\Order\Tax;
+use Magento\Framework\Escaper;
+
+/**
+ * @var $block Tax
+ * @var Escaper $escaper
+ */
+
+$order = $block->getOrder();
+$source = $block->getSource();
+$fullInfo = $this->helper(\Magento\Tax\Helper\Data::class)->getCalculatedTaxes($source);
+if ($fullInfo && $block->displayFullSummary()): ?>
+    <?php foreach ($fullInfo as $info): ?>
+        <?php
+        $percent = $info['percent'];
+        $amount = $info['tax_amount'];
+        $baseAmount = $info['base_tax_amount'];
+        $title = $info['title'];
+        ?>
+        <?= ($block->getIsPlaneMode()) ? ' plane' : ''; ?>">
+            <th colspan="5" <?= $escaper->escapeHtml($block->getLabelProperties()) ?>>
+                <?= $block->escapeHtml($title); ?>
+                <?php if ($percent !== null): ?>
+                    (<?= (float)$percent; ?>%)
+                <?php endif; ?>
+                <br/>
+            </th>
+            <td <?= /* @noEscape */ $block->getValueProperties() ?> rowspan="1">
+                <?= /* @noEscape */ $order->formatPrice($amount); ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?php if ($block->displayFullSummary() && $fullInfo && !$block->getIsPlaneMode()): ?>
+<tr class="totals-tax-summary">
+    <?php elseif ($block->displayFullSummary() && $fullInfo && $block->getIsPlaneMode()): ?>
+<tr class="totals-tax-summary plane">
+    <?php else: ?>
+<tr class="totals-tax">
+    <?php endif; ?>
+    <th colspan="5"<?= /* @noEscape */$block->getLabelProperties() ?> scope="row">
+        <?php if ($block->displayFullSummary()): ?>
+            <div class="detailed"><?= $escaper->escapeHtml(__('Tax')) ?></div>
+        <?php else: ?>
+            <?= $escaper->escapeHtml(__('Tax')) ?>
+        <?php endif; ?>
+    </th>
+    <td <?= /* @noEscape */ $block->getValueProperties() ?> data-th="<?= $escaper->escapeHtmlAttr(__('Tax')) ?>">
+        <?= /* @noEscape */ $order->formatPrice($source->getTaxAmount()) ?>
+    </td>
+</tr>

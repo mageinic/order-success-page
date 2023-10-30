@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_OrderSuccessPage
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="MageINIC" sortOrder="550" translate="label">
+            <label>MageINIC</label>
+        </tab>
+        <section id="order_success_page" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5"
+                 translate="label">
+            <label>Order Success Page</label>
+            <tab>mageinic</tab>
+            <resource>MageINIC_OrderSuccessPage::order_success_page_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Order Success Page Configuration</label>
+                <field id="enable_disable" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment><![CDATA[Select <b>Enable</b> to enable this module.<br />]]></comment>
+                </field>
+                <field id="show_shipping_address" translate="label" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Shipping Address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_shipping_method" translate="label" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Shipping Method</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_billing_address" translate="label" type="select" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Billing Address</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                    <field id="show_payment_method" translate="label" type="select" sortOrder="50"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Payment Method</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_order_product" translate="label" type="select" sortOrder="60"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Ordered Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_order_status" translate="label" type="select" sortOrder="70"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Order Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_reorder_link" translate="label" type="select" sortOrder="80"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Reorder Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="show_print_order_link" translate="label" type="select" sortOrder="90"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Print Order Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+                <field id="description" translate="label" type="editor" sortOrder="100"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <frontend_model>MageINIC\OrderSuccessPage\Block\Adminhtml\Editor</frontend_model>
+                    <depends>
+                        <field id="order_success_page/general/enable_disable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="thank_config" translate="label" type="text" sortOrder="2"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Thank You Message Configuration</label>
+                <depends>
+                    <field id="order_success_page/general/enable_disable">1</field>
+                </depends>
+                <field id="thank_message" translate="label comment" type="text" sortOrder="2"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thank You Message</label>
+                    <comment>Thank you message will be displayed on the frontend.</comment>
+                </field>
+                <field id="size_thanks" translate="label comment" type="text" sortOrder="3"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Input Size (Pixel)</label>
+                    <validate>validate-digits validate-greater-than-zero</validate>
+                    <comment>This config will change text size of thank you message on the frontend.</comment>
+                </field>
+                <field id="color_thanks" translate="label" type="text" sortOrder="4"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>MageINIC\OrderSuccessPage\Block\Color</frontend_model>
+                </field>
+            </group>
+            <group id="before_config" translate="label" type="text" sortOrder="3"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Text Above Order Details Configuration</label>
+                <depends>
+                    <field id="order_success_page/general/enable_disable">1</field>
+                </depends>
+                <field id="text_before" translate="label comment" type="text" sortOrder="2"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Above Order Details</label>
+                    <comment>This text will be displayed above your order details on the frontend.</comment>
+                </field>
+                <field id="size_before_text" translate="label comment" type="text" sortOrder="3"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Input Size (Pixel)</label>
+                    <validate>validate-digits validate-greater-than-zero</validate>
+                    <comment>This config will change size of text above your order on the frontend.</comment>
+                </field>
+                <field id="color_text_before" translate="label" type="text" sortOrder="4"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>MageINIC\OrderSuccessPage\Block\Color</frontend_model>
+                </field>
+            </group>
+            <group id="after_config" translate="label" type="text" sortOrder="4"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Text Under Order Details Configuration</label>
+                <depends>
+                    <field id="order_success_page/general/enable_disable">1</field>
+                </depends>
+                <field id="text_after" translate="label comment" type="text" sortOrder="2"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Under Order Details</label>
+                    <comment>This text will be displayed under your order on the frontend.</comment>
+                </field>
+                <field id="size_after_text" translate="label comment" type="text" sortOrder="3"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Input Size (Pixel)</label>
+                    <validate>validate-digits validate-greater-than-zero</validate>
+                    <comment>This config will change size of text under your order on the frontend.</comment>
+                </field>
+                <field id="color_text_after" translate="label" type="text" sortOrder="4"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <frontend_model>MageINIC\OrderSuccessPage\Block\Color</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

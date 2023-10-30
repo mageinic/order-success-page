@@ -1,0 +1,48 @@
+"Your order # is: <span>%1</span>.","Your order # is: <span>%1</span>."
+"We'll email you an order confirmation with details and tracking info.","We'll email you an order confirmation with details and tracking info."
+"Order Date: ","Order Date: "
+"Order Status: ","Order Status: "
+"Shipping Address","Shipping Address"
+"No shipping Address available","No shipping Address available"
+"Shipping Method","Shipping Method"
+"No shipping information available","No shipping information available"
+"Billing Address","Billing Address"
+"Payment Method","Payment Method"
+"Product Name","Product Name"
+SKU,SKU
+Price,Price
+Qty,Qty
+Subtotal,Subtotal
+"Ordered: ","Ordered: "
+Re-Order,Re-Order
+"Print Order","Print Order"
+"Continue Shopping","Continue Shopping"
+Tax,Tax
+"Order Success Page","Order Success Page"
+"Order Success Page Configuration","Order Success Page Configuration"
+MageINIC,MageINIC
+"Enable Module","Enable Module"
+"Select <b>Enable</b> to enable this module.<br />","Select <b>Enable</b> to enable this module.<br />"
+"Show Shipping Address","Show Shipping Address"
+"Show Shipping Method","Show Shipping Method"
+"Show Billing Address","Show Billing Address"
+"Show Payment Method","Show Payment Method"
+"Show Ordered Product","Show Ordered Product"
+"Show Order Status","Show Order Status"
+"Show Reorder Link","Show Reorder Link"
+"Show Print Order Link","Show Print Order Link"
+Description,Description
+"Thank You Message Configuration","Thank You Message Configuration"
+"Thank You Message","Thank You Message"
+"Thank you message will be displayed on the frontend.","Thank you message will be displayed on the frontend."
+"Text Input Size (Pixel)","Text Input Size (Pixel)"
+"This config will change text size of thank you message on the frontend.","This config will change text size of thank you message on the frontend."
+Color,Color
+"Text Above Order Details Configuration","Text Above Order Details Configuration"
+"Text Above Order Details","Text Above Order Details"
+"This text will be displayed above your order details on the frontend.","This text will be displayed above your order details on the frontend."
+"This config will change size of text above your order on the frontend.","This config will change size of text above your order on the frontend."
+"Text Under Order Details Configuration","Text Under Order Details Configuration"
+"Text Under Order Details","Text Under Order Details"
+"This text will be displayed under your order on the frontend.","This text will be displayed under your order on the frontend."
+"This config will change size of text under your order on the frontend.","This config will change size of text under your order on the frontend."

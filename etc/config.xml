@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MageINIC
+ * Copyright (C) 2023 MageINIC <support@mageinic.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see https://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_OrderSuccessPage
+ * @copyright Copyright (c) 2023 MageINIC (https://www.mageinic.com/)
+ * @license https://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <support@mageinic.com>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <order_success_page>
+            <general>
+                <enabledisable>0</enabledisable>
+                <show_shipping_address>1</show_shipping_address>
+                <show_shipping_method>1</show_shipping_method>
+                <show_billing_address>1</show_billing_address>
+                <show_payment_method>1</show_payment_method>
+                <show_order_product>1</show_order_product>
+                <show_order_status>1</show_order_status>
+                <show_reorder_link>1</show_reorder_link>
+                <show_print_order_link>1</show_print_order_link>
+            </general>
+            <thank_config>
+                <thank_message>Thank you For Purchase</thank_message>
+                <size_thanks>30</size_thanks>
+                <color_thanks>#24c998</color_thanks>
+            </thank_config>
+            <before_config>
+                <text_before>Please check your order information again</text_before>
+                <size_before_text>30</size_before_text>
+                <color_text_before>#942594</color_text_before>
+            </before_config>
+            <after_config>
+                <text_after>Hope to see you next time!</text_after>
+                <size_after_text>30</size_after_text>
+                <color_text_after>#d69d3a</color_text_after>
+            </after_config>
+        </order_success_page>
+    </default>
+</config>

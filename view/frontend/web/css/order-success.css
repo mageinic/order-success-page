@@ -1,0 +1,47 @@
+/**
+ * MageINIC
+ * Copyright (C) 2022 MageINIC <info@MageINIC.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category MageINIC
+ * @package MageINIC_OrderSuccessPage
+ * @copyright Copyright (c) 2022 MageINIC (http://www.MageINIC.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author MageINIC <info@MageINIC.com>
+ */
+
+.description .block.widget.block-new-products.grid {margin-bottom: 20px;}
+.description .pager .pages .items{ display: flex;align-items: center;}
+.description .pager .pages .items .item .page{box-shadow: none ;border-radius: 3px;padding: 1px 13px;background: #f0f0f0;border: 1px solid #ccc;color: #7d7d7d;}
+.description .pager .pages .items .item .page:hover{ border: 1px solid #1979c3;color: #fff;background: #1979c3;box-shadow: none; font-weight: 700;}
+.description .pager .pages .items .item.current .page {border: 1px solid #1979c3;color: #fff;background: #1979c3;box-shadow: none;}
+.description .pager .pages .items .item .action {box-shadow: none;border-radius: 3px;padding: 1px 9px;background: #f0f0f0;border: 1px solid #ccc;}
+.description .pager .pages .items .item .action:hover{ border: 1px solid #1979c3;color: #fff;background: #1979c3;box-shadow: none; }
+.description .pager .pages .items .item .action:before{ font-size: 14px; }
+.description .pager .pages .items .item .action:hover:before{ color: #fff;}
+.info {display: flex;gap: 20px;flex-wrap: wrap;margin-bottom: 30px;}
+.info .box-title {color: #1979c3;font-size: 18px;}
+.info > div {width: 49.0%;}
+.info .box.box-order-shipping-method {order: 2;}
+.info .box.box-order-billing-address {order: 1;}
+.info .box.box-order-billing-method {order: 4;}
+.actions-order {display: flex;gap: 15px;margin-bottom: 15px;}
+.show-order {margin-bottom: 30px;}
+.show-order table{ background: #f0f0f0; }
+.show-order table thead tr th, .show-order table tbody tr td {border-right: 3px solid #fff;}
+.show-order table thead tr th {background: #f0f0f0;}
+.show-order table tbody tr {border-block: 3px solid #fff;}
+.show-order table tfoot tr {border-right: 3px solid #fff;}
+.show-order table tfoot tr th { text-align: right;border-right: 3px solid #fff;}
