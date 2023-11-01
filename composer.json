@@ -1,6 +1,6 @@
 {
     "name": "mageinic/ordersuccesspage",
-    "description": "The Order Success Page Extension allows store owners to customize the Checkout Success Page developed by MageINIC team",
+    "description": "Order Success Page by MageINIC, Order Success Page extension empowers you to create a personalized Thank You Page tailored to your store. It offers a comprehensive order summary, transparent shipping information, and the ability to add custom text. Enhance the post-purchase experience and communicate professionally with your customers.",
     "type": "magento2-module",
     "license": [
         "OSL-3.0",
